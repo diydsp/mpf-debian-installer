@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# Individual, Money, And Society doesn't use the MC component, so it's
+# removed/ commented out  -noah
+
 set -e
 
 ./install-mpf-dependencies
-./install-mc-dependencies
+#./install-mc-dependencies
 
-pip3 install --upgrade mpf mpf-mc
+pip3 install --upgrade mpf
+#pip3 install --upgrade mpf mpf-mc
