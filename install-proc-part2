@@ -1,0 +1,41 @@
+#!/bin/bash
+echo "[LIBPINPROC] Installing libpinproc"
+
+### P3ROC requires libpinproc dev branch, so we'll just get that even if you use a PROC
+
+git clone --branch dev https://github.com/missionpinball/libpinproc.git libpinproc
+cd libpinproc
+
+mkdir -p bin
+cd bin
+
+cmake -DBUILD_SHARED_LIBS=ON ..
+make
+sudo make install
+
+echo "Backing out to main directory..."
+
+cd ../..
+
+echo "[PyPINPROC] Installing pypinproc"
+
+git clone https://github.com/missionpinball/pypinproc pypinproc
+cd pypinproc
+sudo python3 setup.py install
+
+echo "Backing out to main directory..."
+
+
+echo "              Prerequisite Installation finished."
+echo "============================================================"
+echo "!!! You should probably restart to complete installation !!!"
+echo "     (It's complicated, but then again, so is pinball.)"
+echo ""
+
+echo "      When you are done, you'll need to install MPF. The"
+echo "       quick way is to use the MPF debian installer "
+echo "        after you reboot. More information is available"
+echo "                  at docs.missionpinball.org"
+echo ""
+echo "                     Happy pinballing!"
+echo ""
