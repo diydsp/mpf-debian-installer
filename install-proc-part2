@@ -3,7 +3,9 @@ echo "[LIBPINPROC] Installing libpinproc"
 
 ### P3ROC requires libpinproc dev branch, so we'll just get that even if you use a PROC
 
-git clone --branch dev https://github.com/missionpinball/libpinproc.git libpinproc
+# This is temporary until a bug fix on mission's repo comes out
+#git clone --branch dev https://github.com/missionpinball/libpinproc.git libpinproc
+git clone --branch dev https://github.com/diydsp/libpinproc.git libpinproc
 cd libpinproc
 
 mkdir -p bin
