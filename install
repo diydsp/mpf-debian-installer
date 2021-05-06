@@ -8,5 +8,7 @@ set -e
 ./install-mpf-dependencies
 #./install-mc-dependencies
 
-pip3 install --upgrade mpf
+# Forked Git Repo of MPF
+python3.8 -m pip install -e git+git://github.com/diydsp/mpf.git@dev#egg=mpf
+# pip3 install --upgrade mpf
 #pip3 install --upgrade mpf mpf-mc
